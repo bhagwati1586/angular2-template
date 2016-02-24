@@ -1,0 +1,25 @@
+<!-- About Section -->
+<section id="about" class="container content-section text-center">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2">
+      <h2>About Grayscale</h2>
+      <p>Grayscale is a free Bootstrap 3 theme created by Start Bootstrap. It can be yours right now, simply download the template on the preview page. The theme is open source, and you can use it for any purpose, personal or commercial.</p>
+    </div>
+
+    <div class="col-lg-8 col-lg-offset-2">
+    <p>
+      For reward, here is a list of awesome computer scientists! You want more? Add them yourself!
+    </p>
+    <form class="form-inline" (submit)="addName()">
+      <input class="form-control"  [(ngModel)]="newName">
+      <button class="btn btn-default" type="submit">Add</button>
+    </form>
+    <ul class="list-group text-left">
+      <li class="list-group-item" *ngFor="#name of list.get();  #i = index">{{name}} <span class="badge" (click)="deleteName(i)">X</span></li>
+    </ul>
+    </div>
+
+  </div>
+</section>
+
+

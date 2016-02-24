@@ -1,0 +1,4 @@
+.list-group{ color: #666;}
+
+.list-group-item>.badge{
+  cursor: pointer;}

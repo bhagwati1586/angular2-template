@@ -19,11 +19,28 @@
   <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
   <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
   <![endif]-->
-
+<style>
+  .page-loading {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1040;
+    background-color: #FFF;
+    filter: alpha(opacity=50);
+    opacity: .5;
+    text-indent: -44444px;
+    background-image: url(../images/icons/loading.gif);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size :50px 50px;/*display:none;*/
+  }
+</style>
 </head>
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
 
-<app>Loading...</app>
+<app><div class="page-loading">Loading...</div></app>
 
 <!-- Footer -->
 <footer>

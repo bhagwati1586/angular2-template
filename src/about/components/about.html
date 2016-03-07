@@ -10,13 +10,54 @@
     <p>
       For reward, here is a list of awesome computer scientists! You want more? Add them yourself!
     </p>
-    <form class="form-inline" (submit)="addName()">
-      <input class="form-control"  [(ngModel)]="newName">
+      <div class="well well-sm" *ngIf="error">{{errorMsg}}</div>
+
+      <form>
+        <div class="form-group form-inline">
+          <input placeholder="Put the Name here" class="form-control"  [(ngModel)]="empName">
+          <input placeholder="Put the Age here" class="form-control"  [(ngModel)]="empAge">
+          <button *ngIf="!edit" class="btn btn-default" (click)="addEmp()">Add</button>
+          <button *ngIf="edit" class="btn btn-default" (click)="updateEmp(index)">Update</button>
+        </div>
+      </form>
+        <table class="table table-bordered table-stripped">
+          <thead>
+          <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Action</th>
+          </tr>
+          <tr *ngFor="#emp of list.getEmp(); #i = index">
+            <td>{{emp.firstName}}</td>
+            <td>{{emp.age}}</td>
+            <td><span class="badge" (click)="deleteEmp(i)">X</span><span class="badge" (click)="editEmp(i)"><i class="fa fa-edit"></i> </span></td>
+          </tr>
+          </thead>
+        </table>
+
+    <form (submit)="addName()">
+      <div class="form-group form-inline">
+      <input placeholder="Put the name here" class="form-control"  [(ngModel)]="newName">
       <button class="btn btn-default" type="submit">Add</button>
+      </div>
+
     </form>
-    <ul class="list-group text-left">
-      <li class="list-group-item" *ngFor="#name of list.get();  #i = index">{{name}} <span class="badge" (click)="deleteName(i)">X</span></li>
-    </ul>
+      <table class="table table-bordered table-stripped">
+        <thead>
+        <tr>
+          <th>Name</th>
+          <th>Action</th>
+        </tr>
+        <tr *ngFor="#name of list.get(); #i = index">
+          <td>{{name}}</td>
+          <td><span class="badge" (click)="deleteName(i)">X</span></td>
+        </tr>
+        </thead>
+      </table>
+
+    <!--<ul class="list-group text-left">
+      <li class="list-group-item" *ngFor="#name of list.get();  #i = index"><strong>Name : </strong>{{name}} <span class="badge" (click)="deleteName(i)">X</span></li>
+    </ul>-->
     </div>
 
   </div>

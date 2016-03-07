@@ -1,4 +1,2 @@
-.list-group{ color: #666;}
-
-.list-group-item>.badge{
-  cursor: pointer;}
+.table>.badge{ cursor: pointer;}
+.well{ color: #FF0000;}
